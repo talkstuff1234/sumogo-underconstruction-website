@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-weight: 600;
+  color: #222;
+}
+
+.shop-btn {
+  padding: 10px 20px;
+  background-color: #00b050;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.3s;
+}
+
+.shop-btn:hover {
+  transform: scale(1.05);
+}
+
+main {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.tagline {
+  color: #00b050;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.highlight {
+  color: #00b050;
+}
+
+.desc {
+  font-size: 36px;
+  color: #00b050;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin: 20px 0;
+}
+
+.btn-green, .btn-outline {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-green {
+  background-color: #00b050;
+  color: white;
+  border: none;
+}
+
+.btn-green:hover {
+  background-color: #009742;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #00b050;
+  border: 2px solid #00b050;
+}
+
+.btn-outline:hover {
+  background-color: #00b050;
+  color: white;
+}
+
+.loading {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #00b050;
+  font-weight: bold;
+  height: 30px;
+}
+
+.products {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.products img {
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: scale(0.95);
+  transition: transform 0.3s;
+}
+
+.products img:hover {
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
