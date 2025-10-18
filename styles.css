@@ -21,10 +21,11 @@ body {
   flex-direction: column;
 }
 
+/* BASE CONTAINER */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 0 20px;
   text-align: center;
   flex: 1 0 auto;
 }
@@ -34,7 +35,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;
+  padding: 15px 10px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -43,7 +44,7 @@ header {
 }
 
 .logo {
-  width: 100px;
+  width: 80px;
 }
 
 .logo img {
@@ -52,13 +53,13 @@ header {
 }
 
 .shop-btn {
-  padding: 10px 15px;
+  padding: 8px 12px;
   background-color: #00b050;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 10px;
   transition: transform 0.3s;
 }
 
@@ -108,47 +109,43 @@ main {
 
 /* PRODUCT IMAGES SECTION */
 .products {
-  position: relative;
+  position: absolute;
+  bottom: 100%; /* sits exactly on top of the footer */
+  left: 50%;
+  transform: translateX(-50%) translateY(-1px); /* small upward push if needed */
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  flex-wrap: nowrap;
   gap: 0;
-  margin-bottom: -60px;
   animation: fadeInUp 1.5s ease-in-out forwards;
-  z-index: -100;
+  z-index: -200;
 }
 
 /* Make the images scale fluidly */
 .products img {
-  width: clamp(120px, 30vw, 300px);
-  max-width: 100%;
   height: auto;
   border-radius: 15px;
   transition: all 0.3s ease;
+  max-width: 300px;
+  width: 100%;
 }
 
-/* Product positions */
+/* Product positions (mobile default) */
+.product-1 {
+  transform: translateX(25%) translateY(15px) scale(0.95) rotate(-3deg);
+}
+.product-2 {
+  transform: translateY(5px) scale(1.1);
+}
+.product-3 {
+  transform: translateX(-25%) translateY(15px) scale(0.95) rotate(3deg);
+}
+
 .product-1,
 .product-2,
 .product-3 {
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.product-1 {
-  transform: translateX(30%) translateY(10px) scale(0.92) rotate(-3deg);
-  z-index: 5;
-}
-
-.product-2 {
-  transform: translateY(-20px) scale(1.08);
-  z-index: 10;
-}
-
-.product-3 {
-  transform: translateX(-30%) translateY(10px) scale(0.92) rotate(3deg);
-  z-index: 5;
+  width: 40vw;
+  max-width: 200px;
 }
 
 .products img:hover {
@@ -162,71 +159,47 @@ footer {
   height: 120px;
   background-color: #012d12;
   flex-shrink: 0;
-  z-index: 100;
+  /* z-index: 100; */
+  position: relative;
 }
 
 /* RESPONSIVE DESIGN */
-/* Small Screens */
-@media (max-width: 480px) {
-  .products {
-    flex-direction: row;
-    gap: 0;
-    margin-bottom: -40px;
-  }
-
-  .products img {
-    width: clamp(140px, 35vw, 340px);
-  }
-
-  .product-1 {
-    transform: translateX(25%) translateY(5px) scale(0.95) rotate(-3deg);
-  }
-
-  .product-2 {
-    transform: translateY(-15px) scale(1.1);
-  }
-
-  .product-3 {
-    transform: translateX(-25%) translateY(5px) scale(0.95) rotate(3deg);
-  }
-
+/* Medium Screens - Tablets */
+@media (min-width: 768px) {
   header {
-    padding: 15px 10px;
+    padding: 20px 20px;
   }
 
   .logo {
-    width: 80px;
+    width: 100px;
   }
 
   .shop-btn {
-    padding: 8px 12px;
-    margin-left: 10px;
+    padding: 10px 15px;
+    margin-left: 20px;
   }
-}
 
-/* Medium Screens */
-@media (min-width: 768px) {
   .product-1 {
-    transform: translateX(30%) translateY(10px) scale(0.94) rotate(-3deg);
+    transform: translateX(30%) translateY(15px) scale(0.94) rotate(-3deg);
   }
 
   .product-2 {
-    transform: translateY(-20px) scale(1.07);
+    transform: scale(1.07);
   }
 
   .product-3 {
-    transform: translateX(-30%) translateY(10px) scale(0.94) rotate(3deg);
+    transform: translateX(-30%) translateY(15px) scale(0.94) rotate(3deg);
   }
 }
 
-/* Large Screens */
+/* Large Screens - Desktop */
 @media (min-width: 1024px) {
   .product-1 {
     transform: translateX(30%) translateY(15px) scale(0.95) rotate(-3deg);
   }
 
   .product-2 {
-    transform: translateY(-25px) scale(1.1);
+    transform: scale(1.1);
   }
 
   .product-3 {
@@ -234,11 +207,10 @@ footer {
   }
 }
 
-/* ANIMATIONS */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -246,13 +218,7 @@ footer {
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* @keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+} */
