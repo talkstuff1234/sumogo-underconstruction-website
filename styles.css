@@ -139,7 +139,7 @@ main {
   transform: translateY(5px) scale(1.1);
 }
 .product-3 {
-  transform: translateX(-25%) translateY(15px) scale(0.95) rotate(3deg);
+  transform: translateX(-35%) translateY(15px) scale(0.95) rotate(3deg);
 }
 
 .product-1,
@@ -188,7 +188,7 @@ footer {
   }
 
   .product-3 {
-    transform: translateX(-30%) translateY(15px) scale(0.94) rotate(3deg);
+    transform: translateX(-40%) translateY(15px) scale(0.94) rotate(3deg);
   }
 
   footer {
@@ -207,7 +207,7 @@ footer {
   }
 
   .product-3 {
-    transform: translateX(-30%) translateY(15px) scale(0.95) rotate(3deg);
+    transform: translateX(-40%) translateY(15px) scale(0.95) rotate(3deg);
   }
 }
 
