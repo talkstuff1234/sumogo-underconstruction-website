@@ -2,7 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: clip;
 }
 
 /* RESET & BASE */
@@ -160,7 +160,6 @@ footer {
   height: 180px;
   background-color: #012d12;
   flex-shrink: 0;
-  overflow: hidden;
   position: relative;
 }
 
