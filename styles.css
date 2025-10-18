@@ -160,7 +160,7 @@ footer {
   height: 180px;
   background-color: #012d12;
   flex-shrink: 0;
-  /* z-index: 100; */
+  overflow: hidden;
   position: relative;
 }
 
@@ -192,7 +192,7 @@ footer {
     transform: translateX(-30%) translateY(15px) scale(0.94) rotate(3deg);
   }
 
-  footer{
+  footer {
     height: 120px;
   }
 }
